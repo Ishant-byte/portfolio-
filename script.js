@@ -50,9 +50,21 @@ skillsObserver.observe(document.getElementById('skills'));
 
 // Project card flip effect
 document.querySelectorAll('.project-card').forEach(card => {
+    // Flip on card click
     card.addEventListener('click', () => {
         card.classList.toggle('flipped');
     });
+
+    // Flip on "View Details" click
+    const viewDetailsBtn = card.querySelector('.view-details');
+    if (viewDetailsBtn) {
+        viewDetailsBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card click from firing
+            card.classList.toggle('flipped');
+        });
+    }
+
+    // Back button to unflip
     const backBtn = card.querySelector('.project-back button');
     backBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -85,13 +97,15 @@ Object.keys(inputs).forEach(key => {
     });
 });
 
-// Contact form submission
+// Contact form submission (demo simulation)
 const submitBtn = document.getElementById('submitBtn');
 const btnText = document.getElementById('btnText');
 const loadingSpinner = document.getElementById('loadingSpinner');
 const formMessage = document.getElementById('formMessage');
 
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Explicitly prevent any default form submission
+
     const name = inputs.name.value.trim();
     const email = inputs.email.value.trim();
     const message = inputs.message.value.trim();
@@ -110,7 +124,7 @@ submitBtn.addEventListener('click', () => {
         return;
     }
 
-    // Simulate form submission
+    // Simulate form submission (demo only)
     btnText.classList.add('hidden');
     loadingSpinner.classList.remove('hidden');
     submitBtn.disabled = true;
@@ -120,7 +134,7 @@ submitBtn.addEventListener('click', () => {
         loadingSpinner.classList.add('hidden');
         submitBtn.disabled = false;
 
-        formMessage.textContent = 'Message sent successfully!';
+        formMessage.textContent = 'Demo: Message not sent (this is a portfolio demo).';
         formMessage.classList.remove('hidden', 'text-red-600');
         formMessage.classList.add('text-green-600');
 
