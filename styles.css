@@ -26,6 +26,14 @@ body {
 .crt-theme .progress-fill {
     background: #2ecc71;
 }
+.crt-theme .hero-section {
+    background: linear-gradient(to bottom, #1a2a1a, #2e2e2e), url('https://www.transparenttextures.com/patterns/subtle-grunge.png');
+    background-size: cover;
+    background-position: center;
+}
+.crt-theme .hero-section::before {
+    background: rgba(46, 204, 113, 0.3);
+}
 .nav-link {
     transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
@@ -58,6 +66,26 @@ body {
 .section-container.visible {
     opacity: 1;
     transform: translateY(0);
+}
+.hero-section {
+    position: relative;
+    background: linear-gradient(to bottom, #e8e8e8, #d0d0d0), url('https://www.transparenttextures.com/patterns/circuit.png');
+    background-size: cover;
+    background-position: center;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.hero-section > * {
+    position: relative;
+    z-index: 2;
 }
 .typewriter h1 {
     overflow: hidden;
@@ -151,4 +179,7 @@ body {
 }
 .theme-toggle:hover {
     transform: rotate(90deg);
+}
+.view-details {
+    cursor: pointer;
 }
