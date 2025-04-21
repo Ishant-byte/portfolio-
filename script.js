@@ -1,5 +1,7 @@
 // Ensure the script runs only after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded'); // Debug: Confirm DOM is loaded
+
     // Smooth scrolling for nav links
     document.querySelectorAll('.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -15,21 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('themeIcon');
 
     if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            console.log('Theme toggle clicked'); // Debugging log
-            document.body.classList.toggle('crt-theme');
-            const isCrt = document.body.classList.contains('crt-theme');
-            
-            // Guard localStorage usage
-            if (typeof localStorage !== 'undefined') {
-                localStorage.setItem('theme', isCrt ? 'crt' : 'default');
-            }
+        console.log('Theme toggle button found'); // Debug: Confirm button exists
 
-            // Update icon to indicate mode
-            if (themeIcon) {
-                themeIcon.innerHTML = isCrt ?
-                    `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>` : // Moon icon for dark mode
-                    `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>`; // Sun icon for light mode
+        themeToggle.addEventListener('click', () => {
+            try {
+                console.log('Theme toggle clicked'); // Debug: Confirm click event
+
+                // Toggle the crt-theme class
+                document.body.classList.toggle('crt-theme');
+                const isCrt = document.body.classList.contains('crt-theme');
+                console.log('CRT theme active:', isCrt); // Debug: Confirm class toggle
+
+                // Save theme preference
+                if (typeof localStorage !== 'undefined') {
+                    localStorage.setItem('theme', isCrt ? 'crt' : 'default');
+                    console.log('Theme saved to localStorage:', isCrt ? 'crt' : 'default');
+                }
+
+                // Update icon
+                if (themeIcon) {
+                    themeIcon.innerHTML = isCrt ?
+                        `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>` : // Moon icon
+                        `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>`; // Sun icon
+                    console.log('Icon updated to:', isCrt ? 'moon' : 'sun');
+                }
+            } catch (error) {
+                console.error('Error in theme toggle:', error);
             }
         });
     } else {
@@ -37,10 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load theme from localStorage if available
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme') === 'crt') {
-        document.body.classList.add('crt-theme');
-        if (themeIcon) {
-            themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>`;
+    if (typeof localStorage !== 'undefined') {
+        const savedTheme = localStorage.getItem('theme');
+        console.log('Saved theme:', savedTheme); // Debug: Confirm saved theme
+        if (savedTheme === 'crt') {
+            document.body.classList.add('crt-theme');
+            if (themeIcon) {
+                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>`;
+            }
         }
     }
 
