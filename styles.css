@@ -1,38 +1,46 @@
 body {
     font-family: 'IBM Plex Mono', monospace;
     scroll-behavior: smooth;
-    background: #f5f5f5 url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
-    color: #121212;
+    background: #1a2a1a url('https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png') !important;
+    color: #2ecc71;
     transition: background 0.5s ease, color 0.5s ease;
 }
-.crt-theme {
-    background: #1a2a1a url('https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png');
-    color: #2ecc71;
-}
-.crt-theme .section-container {
+.section-container {
     background: rgba(26, 42, 26, 0.9);
-    border-color: #2ecc71;
+    border: 1px solid #2ecc71;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
 }
-.crt-theme .project-card, .crt-theme .input-field {
-    border-color: #2ecc71;
+.section-container.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-.crt-theme .btn-primary {
-    background: #2ecc71;
-    color: #1a2a1a;
+.hero-section {
+    position: relative;
+    background: #1a2a1a !important; /* Fallback color */
+    background-image: linear-gradient(to bottom, #1a2a1a, #2e2e2e), url('https://www.transparenttextures.com/patterns/subtle-grunge.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
 }
-.crt-theme .btn-primary:hover {
-    background: #27ae60;
-}
-.crt-theme .progress-fill {
-    background: #2ecc71;
-}
-.crt-theme .hero-section {
-    background: linear-gradient(to bottom, #1a2a1a, #2e2e2e), url('https://www.transparenttextures.com/patterns/subtle-grunge.png');
-    background-size: cover;
-    background-position: center;
-}
-.crt-theme .hero-section::before {
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(46, 204, 113, 0.3);
+    z-index: 1;
+}
+.hero-section > * {
+    position: relative;
+    z-index: 2;
+}
+.hero-text {
+    color: #2ecc71 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .nav-link {
     transition: color 0.3s ease, transform 0.3s ease;
@@ -55,38 +63,6 @@ body {
     color: #4a7043;
     transform: translateY(-1px);
 }
-.section-container {
-    background: rgba(245, 245, 245, 0.85);
-    border: 1px solid #4a7043;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease, opacity 0.6s ease;
-    opacity: 0;
-    transform: translateY(20px);
-}
-.section-container.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.hero-section {
-    position: relative;
-    background: linear-gradient(to bottom, #e8e8e8, #d0d0d0), url('https://www.transparenttextures.com/patterns/circuit.png');
-    background-size: cover;
-    background-position: center;
-}
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-.hero-section > * {
-    position: relative;
-    z-index: 2;
-}
 .typewriter h1 {
     overflow: hidden;
     border-right: .15em solid #4a7043;
@@ -104,7 +80,7 @@ body {
 }
 .project-card {
     perspective: 1000px;
-    border: 1px solid #4a7043;
+    border: 1px solid #2ecc71;
 }
 .project-inner {
     position: relative;
@@ -125,33 +101,31 @@ body {
     width: 100%;
     height: 100%;
     transform: rotateY(180deg);
-    background: rgba(245, 245, 245, 0.85);
-    border: 1px solid #4a7043;
-}
-.crt-theme .project-back {
     background: rgba(26, 42, 26, 0.9);
-    border-color: #2ecc71;
+    border: 1px solid #2ecc71;
 }
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 .btn-primary {
-    background: #4a7043;
-    color: #f5f5f5;
+    background: #2ecc71;
+    color: #1a2a1a;
     transition: background 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 .btn-primary:hover {
-    background: #3a5a35;
+    background: #27ae60;
     transform: scale(1.05);
 }
 .input-field {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #4a7043;
+    border: 1px solid #2ecc71;
     background: #ececec;
 }
 .input-field:focus {
-    border-color: #4a7043;
+    border-color: #2ecc71;
     box-shadow: 0 0 8px rgba(74, 112, 67, 0.3);
 }
 .input-field.error {
@@ -165,7 +139,7 @@ body {
 }
 .progress-fill {
     height: 100%;
-    background: #4a7043;
+    background: #2ecc71;
     width: 0;
     transition: width 1s ease-in-out;
 }
@@ -174,12 +148,9 @@ body {
     background-position: center;
     background-size: cover;
 }
-.theme-toggle {
-    transition: transform 0.3s ease;
-}
-.theme-toggle:hover {
-    transform: rotate(90deg);
-}
 .view-details {
     cursor: pointer;
+}
+#home {
+    background: none !important; /* Ensure no conflicting background */
 }
