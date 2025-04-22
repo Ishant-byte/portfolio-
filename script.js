@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
+    const themeIcon = themeToggle.querySelector('svg path'); // Select the path directly
 
     if (themeToggle) {
         console.log('Theme toggle button found'); // Debug: Confirm button exists
@@ -23,23 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 console.log('Theme toggle clicked'); // Debug: Confirm click event
 
-                // Toggle the crt-theme class
-                document.body.classList.toggle('crt-theme');
-                const isCrt = document.body.classList.contains('crt-theme');
-                console.log('CRT theme active:', isCrt); // Debug: Confirm class toggle
+                // Toggle the light-theme class
+                document.body.classList.toggle('light-theme');
+                const isLight = document.body.classList.contains('light-theme');
+                console.log('Light theme active:', isLight); // Debug: Confirm class toggle
 
                 // Save theme preference
                 if (typeof localStorage !== 'undefined') {
-                    localStorage.setItem('theme', isCrt ? 'crt' : 'default');
-                    console.log('Theme saved to localStorage:', isCrt ? 'crt' : 'default');
+                    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                    console.log('Theme saved to localStorage:', isLight ? 'light' : 'dark');
                 }
 
                 // Update icon
                 if (themeIcon) {
-                    themeIcon.innerHTML = isCrt ?
-                        `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>` : // Moon icon
-                        `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>`; // Sun icon
-                    console.log('Icon updated to:', isCrt ? 'moon' : 'sun');
+                    themeIcon.setAttribute('d', isLight ?
+                        'M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z' : // Moon icon
+                        'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' // Sun icon
+                    );
+                    console.log('Icon updated to:', isLight ? 'moon' : 'sun');
                 }
             } catch (error) {
                 console.error('Error in theme toggle:', error);
@@ -53,10 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof localStorage !== 'undefined') {
         const savedTheme = localStorage.getItem('theme');
         console.log('Saved theme:', savedTheme); // Debug: Confirm saved theme
-        if (savedTheme === 'crt') {
-            document.body.classList.add('crt-theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
             if (themeIcon) {
-                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>`;
+                themeIcon.setAttribute('d', 'M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z');
+            }
+        } else {
+            // Default to dark theme
+            document.body.classList.remove('light-theme');
+            if (themeIcon) {
+                themeIcon.setAttribute('d', 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z');
             }
         }
     }
