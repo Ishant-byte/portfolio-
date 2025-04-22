@@ -9,8 +9,8 @@ body {
 }
 
 body.light-theme {
-    background: #f5f5f5 url('https://www.transparenttextures.com/patterns/subtle-grunge.png') !important;
-    color: #2A2A2A;
+    background: #FFFFFF !important;
+    color: #000000;
 }
 
 .section-container {
@@ -42,8 +42,8 @@ body.light-theme .section-container {
 }
 
 body.light-theme .hero-section {
-    background: #e8e8e8 !important;
-    background-image: linear-gradient(to bottom, #e8e8e8, #f5f5f5), url('https://www.transparenttextures.com/patterns/subtle-grunge.png') !important;
+    background: #FFFFFF !important;
+    background-image: none !important;
 }
 
 .hero-section::before {
@@ -72,7 +72,7 @@ body.light-theme .hero-section::before {
 }
 
 body.light-theme .hero-text {
-    color: #2A2A2A !important;
+    color: #000000 !important;
     text-shadow: none;
 }
 
@@ -83,7 +83,7 @@ body.light-theme .hero-text {
 }
 
 body.light-theme .nav-link {
-    color: #2A2A2A;
+    color: #000000;
 }
 
 .nav-link::after {
@@ -106,6 +106,10 @@ body.light-theme .nav-link {
     transform: translateY(-1px);
 }
 
+body.light-theme .nav-link:hover {
+    color: #000000;
+}
+
 .typewriter h1 {
     overflow: hidden;
     border-right: .15em solid #FFFFFF;
@@ -115,7 +119,7 @@ body.light-theme .nav-link {
 }
 
 body.light-theme .typewriter h1 {
-    border-right: .15em solid #2A2A2A;
+    border-right: .15em solid #000000;
 }
 
 @keyframes typing {
@@ -129,7 +133,7 @@ body.light-theme .typewriter h1 {
 }
 
 body.light-theme @keyframes blink-caret {
-    50% { border-color: #2A2A2A }
+    50% { border-color: #000000 }
 }
 
 .project-card {
@@ -193,9 +197,9 @@ body.light-theme .project-card:hover {
 }
 
 body.light-theme .btn-primary {
-    background: transparent;
-    color: #2A2A2A;
-    border: 2px solid #2A2A2A;
+    background: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
 }
 
 .btn-primary:hover {
@@ -206,8 +210,8 @@ body.light-theme .btn-primary {
 }
 
 body.light-theme .btn-primary:hover {
-    background: #2A2A2A;
-    color: #f5f5f5;
+    background: #000000;
+    color: #FFFFFF;
     box-shadow: none;
 }
 
@@ -219,9 +223,9 @@ body.light-theme .btn-primary:hover {
 }
 
 body.light-theme .input-field {
-    border: 2px solid #2A2A2A;
-    background: #e8e8e8;
-    color: #2A2A2A;
+    border: 2px solid #000000;
+    background: #FFFFFF;
+    color: #000000;
 }
 
 .input-field:focus {
@@ -230,7 +234,7 @@ body.light-theme .input-field {
 }
 
 body.light-theme .input-field:focus {
-    border-color: #2A2A2A;
+    border-color: #000000;
     box-shadow: none;
 }
 
@@ -248,7 +252,7 @@ body.light-theme .input-field:focus {
 
 body.light-theme .progress-bar {
     background: #d3d3d3;
-    border: 1px solid #2A2A2A;
+    border: 1px solid #000000;
 }
 
 .progress-fill {
@@ -259,7 +263,7 @@ body.light-theme .progress-bar {
 }
 
 body.light-theme .progress-fill {
-    background: #2A2A2A;
+    background: #000000;
 }
 
 .parallax {
@@ -270,7 +274,7 @@ body.light-theme .progress-fill {
 }
 
 body.light-theme .parallax {
-    background: #e8e8e8 url('https://www.transparenttextures.com/patterns/subtle-grunge.png');
+    background: #FFFFFF;
 }
 
 .view-details {
@@ -279,7 +283,7 @@ body.light-theme .parallax {
 }
 
 body.light-theme .view-details {
-    color: #2A2A2A;
+    color: #000000;
 }
 
 .view-details:hover {
@@ -296,8 +300,8 @@ nav, footer {
 }
 
 body.light-theme nav, body.light-theme footer {
-    background: #f5f5f5 !important;
-    border-bottom: 2px solid #2A2A2A;
+    background: #FFFFFF !important;
+    border-bottom: 2px solid #000000;
 }
 
 h2, h3 {
@@ -306,7 +310,7 @@ h2, h3 {
 }
 
 body.light-theme h2, body.light-theme h3 {
-    color: #2A2A2A;
+    color: #000000;
     text-shadow: none;
 }
 
@@ -315,7 +319,7 @@ p, a {
 }
 
 body.light-theme p, body.light-theme a {
-    color: #2A2A2A;
+    color: #000000;
 }
 
 a:hover {
@@ -323,7 +327,7 @@ a:hover {
 }
 
 body.light-theme a:hover {
-    color: #2A2A2A;
+    color: #000000;
 }
 
 img {
@@ -331,5 +335,5 @@ img {
 }
 
 body.light-theme img {
-    border: 2px solid #2A2A2A;
+    border: 2px solid #000000;
 }
