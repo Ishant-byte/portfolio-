@@ -1,8 +1,8 @@
 body {
     font-family: 'IBM Plex Mono', monospace;
     scroll-behavior: smooth;
-    background: #1c2526 url('https://www.transparenttextures.com/patterns/noise-lines.png') !important;
-    color: #2ecc71;
+    background: #2A2A2A url('https://www.transparenttextures.com/patterns/noise-lines.png') !important;
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
     transition: background 0.3s ease, color 0.3s ease;
@@ -10,22 +10,22 @@ body {
 
 body.light-theme {
     background: #f5f5f5 url('https://www.transparenttextures.com/patterns/subtle-grunge.png') !important;
-    color: #1c2526;
+    color: #2A2A2A;
 }
 
 .section-container {
-    background: rgba(28, 37, 38, 0.9);
-    border: 2px solid #4a7043;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+    background: transparent;
+    border: none;
+    box-shadow: none;
     transition: transform 0.4s ease, opacity 0.6s ease, background 0.3s ease, border-color 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
 }
 
 body.light-theme .section-container {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #2e2e2e;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .section-container.visible {
@@ -35,8 +35,8 @@ body.light-theme .section-container {
 
 .hero-section {
     position: relative;
-    background: #1c2526 !important;
-    background-image: linear-gradient(to bottom, #1c2526, #2e2e2e), url('https://www.transparenttextures.com/patterns/noise-lines.png') !important;
+    background: #2A2A2A !important;
+    background-image: linear-gradient(to bottom, #2A2A2A, #3A3A3A), url('https://www.transparenttextures.com/patterns/noise-lines.png') !important;
     background-size: cover !important;
     background-position: center !important;
 }
@@ -53,12 +53,12 @@ body.light-theme .hero-section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(46, 204, 113, 0.2);
+    background: transparent;
     z-index: 1;
 }
 
 body.light-theme .hero-section::before {
-    background: rgba(0, 0, 0, 0.1);
+    background: transparent;
 }
 
 .hero-section > * {
@@ -67,23 +67,23 @@ body.light-theme .hero-section::before {
 }
 
 .hero-text {
-    color: #2ecc71 !important;
-    text-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+    color: #FFFFFF !important;
+    text-shadow: none;
 }
 
 body.light-theme .hero-text {
-    color: #1c2526 !important;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    color: #2A2A2A !important;
+    text-shadow: none;
 }
 
 .nav-link {
-    color: #d3d3d3;
+    color: #FFFFFF;
     transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
 }
 
 body.light-theme .nav-link {
-    color: #1c2526;
+    color: #2A2A2A;
 }
 
 .nav-link::after {
@@ -108,14 +108,14 @@ body.light-theme .nav-link {
 
 .typewriter h1 {
     overflow: hidden;
-    border-right: .15em solid #4a7043;
+    border-right: .15em solid #FFFFFF;
     white-space: nowrap;
     margin: 0 auto;
     animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
 }
 
 body.light-theme .typewriter h1 {
-    border-right: .15em solid #2e2e2e;
+    border-right: .15em solid #2A2A2A;
 }
 
 @keyframes typing {
@@ -125,23 +125,23 @@ body.light-theme .typewriter h1 {
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: #4a7043 }
+    50% { border-color: #FFFFFF }
 }
 
 body.light-theme @keyframes blink-caret {
-    50% { border-color: #2e2e2e }
+    50% { border-color: #2A2A2A }
 }
 
 .project-card {
     perspective: 1000px;
-    border: 2px solid #4a7043;
-    background: rgba(28, 37, 38, 0.9);
+    border: none;
+    background: transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 body.light-theme .project-card {
-    border: 2px solid #2e2e2e;
-    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    background: transparent;
 }
 
 .project-inner {
@@ -166,72 +166,72 @@ body.light-theme .project-card {
     width: 100%;
     height: 100%;
     transform: rotateY(180deg);
-    background: rgba(28, 37, 38, 0.9);
-    border: 2px solid #4a7043;
+    background: transparent;
+    border: none;
 }
 
 body.light-theme .project-back {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #2e2e2e;
+    background: transparent;
+    border: none;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+    box-shadow: none;
 }
 
 body.light-theme .project-card:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
 }
 
 .btn-primary {
-    background: #4a7043;
-    color: #d3d3d3;
-    border: 2px solid #2ecc71;
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 body.light-theme .btn-primary {
-    background: #2e2e2e;
-    color: #f5f5f5;
-    border: 2px solid #1c2526;
+    background: transparent;
+    color: #2A2A2A;
+    border: 2px solid #2A2A2A;
 }
 
 .btn-primary:hover {
-    background: #2ecc71;
-    color: #1c2526;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+    background: #ffb347;
+    color: #2A2A2A;
+    box-shadow: none;
     transform: scale(1.05);
 }
 
 body.light-theme .btn-primary:hover {
-    background: #1c2526;
+    background: #2A2A2A;
     color: #f5f5f5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    box-shadow: none;
 }
 
 .input-field {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #4a7043;
-    background: #2e2e2e;
-    color: #d3d3d3;
+    border: 2px solid #FFFFFF;
+    background: #3A3A3A;
+    color: #FFFFFF;
 }
 
 body.light-theme .input-field {
-    border: 2px solid #2e2e2e;
-    background: #f5f5f5;
-    color: #1c2526;
+    border: 2px solid #2A2A2A;
+    background: #e8e8e8;
+    color: #2A2A2A;
 }
 
 .input-field:focus {
-    border-color: #2ecc71;
-    box-shadow: 0 0 8px rgba(46, 204, 113, 0.3);
+    border-color: #ffb347;
+    box-shadow: none;
 }
 
 body.light-theme .input-field:focus {
-    border-color: #1c2526;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-color: #2A2A2A;
+    box-shadow: none;
 }
 
 .input-field.error {
@@ -240,33 +240,33 @@ body.light-theme .input-field:focus {
 
 .progress-bar {
     height: 10px;
-    background: #2e2e2e;
-    border: 1px solid #4a7043;
+    background: #3A3A3A;
+    border: 1px solid #FFFFFF;
     border-radius: 5px;
     overflow: hidden;
 }
 
 body.light-theme .progress-bar {
     background: #d3d3d3;
-    border: 1px solid #2e2e2e;
+    border: 1px solid #2A2A2A;
 }
 
 .progress-fill {
     height: 100%;
-    background: #2ecc71;
+    background: #ffb347;
     width: 0;
     transition: width 1s ease-in-out;
 }
 
 body.light-theme .progress-fill {
-    background: #1c2526;
+    background: #2A2A2A;
 }
 
 .parallax {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    background: #1c2526 url('https://www.transparenttextures.com/patterns/noise-lines.png');
+    background: #2A2A2A url('https://www.transparenttextures.com/patterns/noise-lines.png');
 }
 
 body.light-theme .parallax {
@@ -279,7 +279,7 @@ body.light-theme .parallax {
 }
 
 body.light-theme .view-details {
-    color: #2e2e2e;
+    color: #2A2A2A;
 }
 
 .view-details:hover {
@@ -291,31 +291,31 @@ body.light-theme .view-details {
 }
 
 nav, footer {
-    background: #1c2526 !important;
-    border-bottom: 2px solid #4a7043;
+    background: #2A2A2A !important;
+    border-bottom: 2px solid #FFFFFF;
 }
 
 body.light-theme nav, body.light-theme footer {
     background: #f5f5f5 !important;
-    border-bottom: 2px solid #2e2e2e;
+    border-bottom: 2px solid #2A2A2A;
 }
 
 h2, h3 {
-    color: #2ecc71;
-    text-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
+    color: #FFFFFF;
+    text-shadow: none;
 }
 
 body.light-theme h2, body.light-theme h3 {
-    color: #1c2526;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #2A2A2A;
+    text-shadow: none;
 }
 
 p, a {
-    color: #d3d3d3;
+    color: #FFFFFF;
 }
 
 body.light-theme p, body.light-theme a {
-    color: #1c2526;
+    color: #2A2A2A;
 }
 
 a:hover {
@@ -323,5 +323,13 @@ a:hover {
 }
 
 body.light-theme a:hover {
-    color: #2e2e2e;
+    color: #2A2A2A;
+}
+
+img {
+    border: 2px solid #FFFFFF;
+}
+
+body.light-theme img {
+    border: 2px solid #2A2A2A;
 }
