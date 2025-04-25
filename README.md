@@ -1,6 +1,7 @@
-Ishant Rokka - Portfolio
+**Ishant Rokka - Portfolio**
+
 This is a personal portfolio website showcasing my skills, projects, and experience in cybersecurity.
-Overview
+**Overview**
 The site is a single-page application built with HTML, CSS, and JavaScript. It features a dark theme by default with a toggle for light mode, smooth scrolling navigation, and interactive elements like project card flips and progress bars.
 Sections
 
@@ -10,7 +11,7 @@ Skills: Proficiency in penetration testing, network security, web security, and 
 Projects: Key projects with details on vulnerability assessments and web security setups.
 Contact: Contact information and a form to send messages via email.
 
-Setup
+**Setup**
 
 Clone the Repository  
 git clone https://github.com/Ishant-byte/portfolio.git
@@ -28,7 +29,7 @@ Google Fonts (IBM Plex Mono, Courier Prime)No additional installation is require
 
 
 
-Features
+**Features**
 
 Theme Toggle: Switch between dark and light themes, with preferences saved in localStorage.
 Responsive Design: Built with Tailwind CSS for mobile and desktop compatibility.
@@ -41,13 +42,13 @@ Animated skill progress bars.
 
 Contact Form: Validates input and opens the user’s email client to send messages.
 
-File Structure
+**File Structure**
 
 index.html: Main HTML file.
 css/styles.css: Custom styles for the site.
 js/script.js: JavaScript for interactivity and animations.
 
-Contact
+**Contact**
 
 Email: @gmail.com
 LinkedIn: linkedin.com/in/ishantrokkacyber
